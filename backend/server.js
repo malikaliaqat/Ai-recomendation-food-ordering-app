@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
@@ -32,3 +33,24 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server started at http://localhost:${port} 🚀`)
 })
+=======
+
+
+
+import express from 'express';
+import cors from 'cors';
+
+const app = express();
+const port = 4000;
+
+app.use(express.json());
+app.use(cors());
+
+app.get("/", (req, res) => {
+    res.send("Api working");
+});
+
+app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
+});
+>>>>>>> e1f6e32438c35dc4c97448c8008b0029a8c23bdb

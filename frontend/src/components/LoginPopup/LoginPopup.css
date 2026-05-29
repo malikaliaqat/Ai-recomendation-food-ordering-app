@@ -1,0 +1,139 @@
+.login-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-popup-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Title row ---- */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-popup-title h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.close-icon {
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-icon:hover {
+    color: #1a1a1a;
+}
+
+/* ---- Inputs ---- */
+.login-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.login-popup-inputs input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.login-popup-inputs input:focus {
+    border-color: #ff6b35;
+}
+
+/* ---- Button ---- */
+button[type='submit'] {
+    width: 100%;
+    padding: 14px;
+    background: #ff6b35;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+
+button[type='submit']:hover {
+    background: #e55a25;
+}
+
+/* ---- Checkbox row ---- */
+.login-popup-condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.login-popup-condition input[type='checkbox'] {
+    margin-top: 3px;
+    accent-color: #ff6b35;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.login-popup-condition p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ---- Toggle line ---- */
+.login-popup-toggle {
+    font-size: 13px;
+    color: #666;
+    text-align: left;
+}
+
+.login-popup-toggle span {
+    color: #ff6b35;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-popup-toggle span:hover {
+    text-decoration: underline;
+}

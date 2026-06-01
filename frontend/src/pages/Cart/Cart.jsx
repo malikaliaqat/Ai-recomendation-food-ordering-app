@@ -1,74 +1,3 @@
-// import React, { useContext } from 'react'
-// import './Cart.css'
-// import { StoreContext } from '../../context/StoreContext'
-
-// const Cart = () => {
-
-//   const { cartItems, food_list, removeFromCart } = useContext(StoreContext)
-
-//   return (
-//     <div className='cart'>
-
-//       <div className='cart-item'>
-
-//         {/* HEADER ROW */}
-//         <div className='cart-items-title'>
-//           <p>Item</p>
-//           <p>Title</p>
-//           <p>Price</p>
-//           <p>Quantity</p>
-//           <p>Total</p>
-//           <p>Remove</p>
-//         </div>
-
-//         <br />
-//         <hr />
-
-//         {/* DATA ROWS */}
-//         {food_list?.map((item) => {
-
-//           const qty = cartItems?.[item._id]
-
-//           if (qty > 0) {
-//             return (
-//               <div key={item._id} className='cart-items-title cart-items-item'>
-
-//                 <img src={item.image} alt="" />
-//                 <p>{item.name}</p>
-//                 <p>${item.price}</p>
-//                 <p>{qty}</p>
-//                 <p>${item.price * qty}</p>
-
-//                 <p
-//                   className='cross'
-//                   onClick={() => removeFromCart(item._id)}
-//                 >
-//                   ×
-//                 </p>
-
-//               </div>
-//             )
-//           }
-
-//           return null
-//         })}
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Cart
-
-
-
-
-
-
-
-
-
-
 import React, { useContext } from 'react'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
@@ -80,7 +9,8 @@ const Cart = () => {
     cartItems,
     food_list,
     removeFromCart,
-    getTotalCartAmount
+    getTotalCartAmount,
+    url
   } = useContext(StoreContext)
 
   const navigate = useNavigate();
@@ -114,7 +44,7 @@ const Cart = () => {
                 <div key={item._id}>
 
                   <div className='cart-items-title cart-items-item'>
-                    <img src={item.image} alt={item.name} />
+                    <img src={url + "/images/" + item.image} alt={item.name} />
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                     <p>{qty}</p>
